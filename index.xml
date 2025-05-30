@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+    <information>
+        <name>모던 클린 스킨</name>
+        <version>1.0</version>
+        <description>
+            <![CDATA[깔끔하고 가독성 좋은 모던 디자인의 티스토리 스킨입니다. 반응형 디자인을 지원합니다.]]>
+        </description>
+        <license>
+            <![CDATA[자유롭게 수정이 가능하며, 저작권 표시하에 재배포 가능합니다.]]>
+        </license>
+    </information>
+    <author>
+        <name>Modern Designer</name>
+        <homepage>https://example.com</homepage>
+        <email>designer@example.com</email>
+    </author>
+    <default>
+        <recentEntries>8</recentEntries>
+        <recentComments>8</recentComments>
+        <recentTrackbacks>5</recentTrackbacks>
+        <itemsOnGuestbook>10</itemsOnGuestbook>
+        <tagsInCloud>30</tagsInCloud>
+        <sortInCloud>1</sortInCloud>
+        <expandComment>1</expandComment>
+        <expandTrackback>0</expandTrackback>
+        <lengthOfRecentNotice>30</lengthOfRecentNotice>
+        <lengthOfRecentEntry>35</lengthOfRecentEntry>
+        <lengthOfRecentComment>40</lengthOfRecentComment>
+        <lengthOfRecentTrackback>30</lengthOfRecentTrackback>
+        <lengthOfLink>30</lengthOfLink>
+        <showListOnCategory>1</showListOnCategory>
+        <showListOnArchive>1</showListOnArchive>
+        <commentMessage>
+            <none>아직 댓글이 없습니다.</none>
+            <single>댓글 &lt;span class="cnt"&gt;1개&lt;/span&gt;가 있습니다.</single>
+        </commentMessage>
+        <trackbackMessage>
+            <none>받은 트랙백이 없습니다.</none>
+            <single>트랙백이 &lt;span class="cnt"&gt;1개&lt;/span&gt; 있습니다.</single>
+        </trackbackMessage>
+        <tree>
+            <color>333333</color>
+            <bgColor>ffffff</bgColor>
+            <activeColor>2563eb</activeColor>
+            <activeBgColor>f8fafc</activeBgColor>
+            <labelLength>30</labelLength>
+            <showValue>1</showValue>
+        </tree>
+        <contentWidth>800</contentWidth>
+    </default>
+
+    <variables>
+        <variablegroup name="디자인 설정">
+            <variable>
+                <name>primary-color</name>
+                <label>메인 컬러</label>
+                <type>COLOR</type>
+                <default>#2563eb</default>
+                <description>블로그의 메인 컬러를 설정합니다.</description>
+            </variable>
+            <variable>
+                <name>header-bg</name>
+                <label>헤더 배경 이미지</label>
+                <type>IMAGE</type>
+                <default></default>
+                <description>헤더 영역의 배경 이미지를 설정합니다.</description>
+            </variable>
+            <variable>
+                <name>layout-type</name>
+                <label>레이아웃 타입</label>
+                <type>SELECT</type>
+                <option><![CDATA[
+          [
+            {"name":"wide", "label":"와이드", "value":"wide"},
+            {"name":"boxed", "label":"박스형", "value":"boxed"}
+          ]
+        ]]></option>
+                <default>wide</default>
+                <description>블로그의 레이아웃 타입을 선택합니다.</description>
+            </variable>
+            <variable>
+                <name>show-profile</name>
+                <label>프로필 표시</label>
+                <type>BOOL</type>
+                <default>true</default>
+                <description>사이드바에 프로필을 표시합니다.</description>
+            </variable>
+        </variablegroup>
+    </variables>
+
+    <cover>
+        <item>
+            <name>featured</name>
+            <label><![CDATA[추천 글]]></label>
+            <description><![CDATA[메인에 강조할 글을 표시합니다.]]></description>
+        </item>
+        <item>
+            <name>recent</name>
+            <label><![CDATA[최신 글]]></label>
+            <description><![CDATA[최신 글 목록을 표시합니다.]]></description>
+        </item>
+    </cover>
+
+    <liststyle>
+        <item>
+            <label>카드 스타일</label>
+            <value>card</value>
+        </item>
+        <item>
+            <label>리스트 스타일</label>
+            <value>list</value>
+        </item>
+        <item>
+            <label>그리드 스타일</label>
+            <value>grid</value>
+        </item>
+    </liststyle>
+</skin>

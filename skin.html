@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[##_page_title_##]</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: [##_var_primary-color_##];
+        }
+
+        <s_if_var_header-bg>
+         .header {
+             background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('[##_var_header-bg_##]');
+             background-size: cover;
+             background-position: center;
+         }
+        </s_if_var_header-bg>
+
+        <s_if_var_layout-type>
+         .container {
+             max-width: <s_if_var_layout-type>800px</s_if_var_layout-type>;
+         }
+        </s_if_var_layout-type>
+    </style>
+</head>
+
+<body id="[##_body_id_##]" class="[##_var_layout-type_##]">
+<s_t3>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="blog-title">
+                    <a href="[##_blog_link_##]">[##_title_##]</a>
+                </h1>
+                <p class="blog-desc">[##_desc_##]</p>
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="[##_blog_link_##]"><i class="fas fa-home"></i> 홈</a></li>
+                        <li><a href="[##_taglog_link_##]"><i class="fas fa-tags"></i> 태그</a></li>
+                        <li><a href="[##_guestbook_link_##]"><i class="fas fa-comment"></i> 방명록</a></li>
+                        <li><a href="[##_rss_url_##]"><i class="fas fa-rss"></i> RSS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="content-wrapper">
+
+                <!-- Content Area -->
+                <div class="content">
+
+                    <!-- 홈 커버 -->
+                    <s_cover_group>
+                        <s_cover_rep>
+                            <s_cover name="featured">
+                                <section class="featured-section">
+                                    <h2 class="section-title">추천 글</h2>
+                                    <div class="featured-grid">
+                                        <s_cover_item>
+                                            <article class="featured-card">
+                                                <s_cover_item_thumbnail>
+                                                    <div class="card-image">
+                                                        <img src="[##_cover_item_thumbnail_##]" alt="[##_cover_item_title_##]">
+                                                    </div>
+                                                </s_cover_item_thumbnail>
+                                                <div class="card-content">
+                                                    <h3 class="card-title">
+                                                        <a href="[##_cover_item_url_##]">[##_cover_item_title_##]</a>
+                                                    </h3>
+                                                    <p class="card-summary">[##_cover_item_summary_##]</p>
+                                                    <s_cover_item_article_info>
+                                                        <div class="card-meta">
+                              <span class="category">
+                                <a href="[##_cover_item_category_url_##]">[##_cover_item_category_##]</a>
+                              </span>
+                                                            <span class="date">[##_cover_item_simple_date_##]</span>
+                                                        </div>
+                                                    </s_cover_item_article_info>
+                                                </div>
+                                            </article>
+                                        </s_cover_item>
+                                    </div>
+                                </section>
+                            </s_cover>
+
+                            <s_cover name="recent">
+                                <section class="recent-section">
+                                    <h2 class="section-title">최신 글</h2>
+                                    <div class="recent-list">
+                                        <s_cover_item>
+                                            <article class="recent-item">
+                                                <s_cover_item_thumbnail>
+                                                    <div class="item-thumbnail">
+                                                        <img src="[##_cover_item_thumbnail_##]" alt="[##_cover_item_title_##]">
+                                                    </div>
+                                                </s_cover_item_thumbnail>
+                                                <div class="item-content">
+                                                    <h3 class="item-title">
+                                                        <a href="[##_cover_item_url_##]">[##_cover_item_title_##]</a>
+                                                    </h3>
+                                                    <p class="item-summary">[##_cover_item_summary_##]</p>
+                                                    <s_cover_item_article_info>
+                                                        <div class="item-meta">
+                              <span class="category">
+                                <a href="[##_cover_item_category_url_##]">[##_cover_item_category_##]</a>
+                              </span>
+                                                            <span class="date">[##_cover_item_simple_date_##]</span>
+                                                        </div>
+                                                    </s_cover_item_article_info>
+                                                </div>
+                                            </article>
+                                        </s_cover_item>
+                                    </div>
+                                    <s_cover_url>
+                                        <div class="more-link">
+                                            <a href="[##_cover_url_##]" class="btn btn-outline">더 많은 글 보기</a>
+                                        </div>
+                                    </s_cover_url>
+                                </section>
+                            </s_cover>
+                        </s_cover_rep>
+                    </s_cover_group>
+
+                    <!-- 공지사항 -->
+                    <s_notice_rep>
+                        <section class="notice-section">
+                            <div class="notice-badge">공지</div>
+                            <article class="notice-item">
+                                <h2 class="notice-title">
+                                    <a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a>
+                                </h2>
+                                <div class="notice-meta">
+                                    <span class="date">[##_notice_rep_simple_date_##]</span>
+                                </div>
+                                <s_index_article_rep>
+                                    <div class="notice-summary">[##_notice_rep_summary_##]</div>
+                                </s_index_article_rep>
+                                <s_permalink_article_rep>
+                                    <div class="notice-content">[##_notice_rep_desc_##]</div>
+                                </s_permalink_article_rep>
+                            </article>
+                        </section>
+                    </s_notice_rep>
+
+                    <!-- 일반 글 -->
+                    <s_article_rep>
+                        <article class="post">
+                            <header class="post-header">
+                                <h1 class="post-title">
+                                    <a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a>
+                                </h1>
+                                <div class="post-meta">
+                  <span class="category">
+                    <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a>
+                  </span>
+                                    <span class="date">[##_article_rep_simple_date_##]</span>
+                                    <s_rp_count>
+                    <span class="comments">
+                      <i class="fas fa-comment"></i> [##_article_rep_rp_cnt_##]
+                    </span>
+                                    </s_rp_count>
+                                </div>
+                            </header>
+
+                            <s_index_article_rep>
+                                <s_article_rep_thumbnail>
+                                    <div class="post-thumbnail">
+                                        <img src="[##_article_rep_thumbnail_url_##]" alt="[##_article_rep_title_##]">
+                                    </div>
+                                </s_article_rep_thumbnail>
+                                <div class="post-summary">[##_article_rep_summary_##]</div>
+                                <div class="read-more">
+                                    <a href="[##_article_rep_link_##]" class="btn btn-primary">계속 읽기</a>
+                                </div>
+                            </s_index_article_rep>
+
+                            <s_permalink_article_rep>
+                                <s_article_rep_thumbnail>
+                                    <div class="post-thumbnail">
+                                        <img src="[##_article_rep_thumbnail_url_##]" alt="[##_article_rep_title_##]">
+                                    </div>
+                                </s_article_rep_thumbnail>
+                                <div class="post-content">[##_article_rep_desc_##]</div>
+
+                                <!-- 태그 -->
+                                <s_tag_label>
+                                    <div class="post-tags">
+                                        <i class="fas fa-tags"></i>
+                                        [##_tag_label_rep_##]
+                                    </div>
+                                </s_tag_label>
+
+                                <!-- 관리 기능 -->
+                                <s_ad_div>
+                                    <div class="post-admin">
+                                        <a href="[##_s_ad_m_link_##]" class="btn btn-small">수정</a>
+                                        <a href="#" onclick="[##_s_ad_d_onclick_##]" class="btn btn-small btn-danger">삭제</a>
+                                    </div>
+                                </s_ad_div>
+
+                                <!-- 이전/다음 글 -->
+                                <nav class="post-navigation">
+                                    <s_article_prev>
+                                        <div class="nav-prev">
+                                            <span class="nav-label">이전 글</span>
+                                            <a href="[##_article_prev_link_##]" class="nav-title">[##_article_prev_title_##]</a>
+                                        </div>
+                                    </s_article_prev>
+                                    <s_article_next>
+                                        <div class="nav-next">
+                                            <span class="nav-label">다음 글</span>
+                                            <a href="[##_article_next_link_##]" class="nav-title">[##_article_next_title_##]</a>
+                                        </div>
+                                    </s_article_next>
+                                </nav>
+
+                                <!-- 관련 글 -->
+                                <s_article_related>
+                                    <section class="related-posts">
+                                        <h3 class="section-title">관련 글</h3>
+                                        <div class="related-grid">
+                                            <s_article_related_rep>
+                                                <article class="related-item">
+                                                    <s_article_related_rep_thumbnail>
+                                                        <div class="related-thumbnail">
+                                                            <img src="[##_article_related_rep_thumbnail_link_##]" alt="">
+                                                        </div>
+                                                    </s_article_related_rep_thumbnail>
+                                                    <div class="related-content">
+                                                        <h4 class="related-title">
+                                                            <a href="[##_article_related_rep_link_##]">[##_article_related_rep_title_##]</a>
+                                                        </h4>
+                                                        <span class="related-date">[##_article_related_rep_date_##]</span>
+                                                    </div>
+                                                </article>
+                                            </s_article_related_rep>
+                                        </div>
+                                    </section>
+                                </s_article_related>
+                            </s_permalink_article_rep>
+                        </article>
+                    </s_article_rep>
+
+                    <!-- 보호글 -->
+                    <s_article_protected>
+                        <article class="post post-protected">
+                            <header class="post-header">
+                                <h1 class="post-title">[##_article_rep_title_##]</h1>
+                                <div class="post-meta">
+                                    <span class="date">[##_article_rep_simple_date_##]</span>
+                                </div>
+                            </header>
+                            <div class="protected-form">
+                                <i class="fas fa-lock"></i>
+                                <p>보호된 글입니다. 비밀번호를 입력해주세요.</p>
+                                <div class="password-input">
+                                    <input type="password" id="[##_article_password_##]" placeholder="비밀번호" onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]">
+                                    <button onclick="[##_article_dissolve_##]" class="btn btn-primary">확인</button>
+                                </div>
+                            </div>
+                        </article>
+                    </s_article_protected>
+
+                    <!-- 페이지 -->
+                    <s_page_rep>
+                        <article class="page">
+                            <header class="page-header">
+                                <h1 class="page-title">[##_article_rep_title_##]</h1>
+                            </header>
+                            <div class="page-content">[##_article_rep_desc_##]</div>
+                        </article>
+                    </s_page_rep>
+
+                    <!-- 리스트 -->
+                    <s_list>
+                        <section class="list-section [##_list_style_##]">
+                            <header class="list-header">
+                                <s_list_image>
+                                    <div class="list-banner" style="background-image: url('[##_list_image_##]')"></div>
+                                </s_list_image>
+                                <h1 class="list-title">'[##_list_conform_##]' 글 목록</h1>
+                                <p class="list-desc">[##_list_description_##]</p>
+                                <span class="list-count">총 [##_list_count_##]개의 글</span>
+                            </header>
+
+                            <div class="list-content">
+                                <s_list_empty>
+                                    <div class="empty-message">
+                                        <i class="fas fa-inbox"></i>
+                                        <p>글이 없습니다.</p>
+                                    </div>
+                                </s_list_empty>
+
+                                <div class="list-items">
+                                    <s_list_rep>
+                                        <article class="list-item">
+                                            <s_list_rep_thumbnail>
+                                                <div class="item-thumbnail">
+                                                    <img src="[##_list_rep_thumbnail_##]" alt="[##_list_rep_title_text_##]">
+                                                </div>
+                                            </s_list_rep_thumbnail>
+                                            <div class="item-content">
+                                                <h2 class="item-title">
+                                                    <a href="[##_list_rep_link_##]">[##_list_rep_title_text_##]</a>
+                                                </h2>
+                                                <p class="item-summary">[##_list_rep_summary_##]</p>
+                                                <div class="item-meta">
+                          <span class="category">
+                            <a href="[##_list_rep_category_link_##]">[##_list_rep_category_##]</a>
+                          </span>
+                                                    <span class="date">[##_list_rep_regdate_##]</span>
+                                                    <span class="comments">
+                            <i class="fas fa-comment"></i> [##_list_rep_rp_cnt_##]
+                          </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </s_list_rep>
+                                </div>
+                            </div>
+                        </section>
+                    </s_list>
+
+                    <!-- 태그 클라우드 -->
+                    <s_tag>
+                        <section class="tag-cloud-section">
+                            <h1 class="section-title">태그 클라우드</h1>
+                            <div class="tag-cloud">
+                                <s_tag_rep>
+                                    <a href="[##_tag_link_##]" class="tag [##_tag_class_##]">[##_tag_name_##]</a>
+                                </s_tag_rep>
+                            </div>
+                        </section>
+                    </s_tag>
+
+                    <!-- 방명록 -->
+                    <s_guest>
+                        <section class="guestbook-section">
+                            <h1 class="section-title">방명록</h1>
+
+                            <!-- 기본 방명록 -->
+                            [##_guestbook_group_##]
+
+                        </section>
+                    </s_guest>
+
+                    <!-- 댓글 -->
+                    <s_rp>
+                        <section class="comments-section">
+                            <h3 class="section-title">댓글</h3>
+
+                            <!-- 기본 댓글 -->
+                            [##_comment_group_##]
+
+                        </section>
+                    </s_rp>
+
+                    <!-- 페이징 -->
+                    <s_paging>
+                        <nav class="pagination">
+                            <a href="#" [##_prev_page_##] class="page-btn prev [##_no_more_prev_##]">
+                                <i class="fas fa-chevron-left"></i> 이전
+                            </a>
+                            <div class="page-numbers">
+                                <s_paging_rep>
+                                    <a href="#" [##_paging_rep_link_##] class="page-num">[##_paging_rep_link_num_##]</a>
+                                </s_paging_rep>
+                            </div>
+                            <a href="#" [##_next_page_##] class="page-btn next [##_no_more_next_##]">
+                                다음 <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </nav>
+                    </s_paging>
+
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+
+                    <!-- 프로필 -->
+                    <s_if_var_show-profile>
+                        <div class="widget profile-widget">
+                            <div class="profile-image">[##_blog_image_##]</div>
+                            <h3 class="profile-name">[##_blogger_##]</h3>
+                            <p class="profile-desc">[##_desc_##]</p>
+                        </div>
+                    </s_if_var_show-profile>
+
+                    <!-- 검색 -->
+                    <div class="widget search-widget">
+                        <h3 class="widget-title">검색</h3>
+                        <s_search>
+                            <div class="search-form">
+                                <input type="text" name="[##_search_name_##]" value="[##_search_text_##]" placeholder="검색어를 입력하세요" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
+                                <button onclick="[##_search_onclick_submit_##]" class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </s_search>
+                    </div>
+
+                    <s_sidebar>
+                        <s_sidebar_element>
+                            <!-- 카테고리 -->
+                            <div class="widget category-widget">
+                                <h3 class="widget-title">카테고리</h3>
+                                <div class="category-list">
+                                    [##_category_list_##]
+                                </div>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!-- 최근 글 -->
+                            <div class="widget recent-posts-widget">
+                                <h3 class="widget-title">최근 글</h3>
+                                <ul class="recent-posts">
+                                    <s_rctps_rep>
+                                        <li class="recent-post-item">
+                                            <s_rctps_rep_thumbnail>
+                                                <div class="recent-thumbnail">
+                                                    <img src="[##_rctps_rep_thumbnail_##]" alt="">
+                                                </div>
+                                            </s_rctps_rep_thumbnail>
+                                            <div class="recent-content">
+                                                <a href="[##_rctps_rep_link_##]" class="recent-title">[##_rctps_rep_title_##]</a>
+                                                <div class="recent-meta">
+                                                    <span class="recent-date">[##_rctps_rep_simple_date_##]</span>
+                                                    <span class="recent-comments">
+                            <i class="fas fa-comment"></i> [##_rctps_rep_rp_cnt_##]
+                          </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </s_rctps_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!-- 인기 글 -->
+                            <div class="widget popular-posts-widget">
+                                <h3 class="widget-title">인기 글</h3>
+                                <ul class="popular-posts">
+                                    <s_rctps_popular_rep>
+                                        <li class="popular-post-item">
+                                            <s_rctps_rep_thumbnail>
+                                                <div class="popular-thumbnail">
+                                                    <img src="[##_rctps_rep_thumbnail_##]" alt="">
+                                                </div>
+                                            </s_rctps_rep_thumbnail>
+                                            <div class="popular-content">
+                                                <a href="[##_rctps_rep_link_##]" class="popular-title">[##_rctps_rep_title_##]</a>
+                                                <div class="popular-meta">
+                                                    <span class="popular-date">[##_rctps_rep_simple_date_##]</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </s_rctps_popular_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!-- 최근 댓글 -->
+                            <div class="widget recent-comments-widget">
+                                <h3 class="widget-title">최근 댓글</h3>
+                                <ul class="recent-comments">
+                                    <s_rctrp_rep>
+                                        <li class="recent-comment-item">
+                                            <a href="[##_rctrp_rep_link_##]" class="comment-content">[##_rctrp_rep_desc_##]</a>
+                                            <div class="comment-meta">
+                                                <span class="comment-author">[##_rctrp_rep_name_##]</span>
+                                                <span class="comment-time">[##_rctrp_rep_time_##]</span>
+                                            </div>
+                                        </li>
+                                    </s_rctrp_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!-- 태그 클라우드 -->
+                            <div class="widget tags-widget">
+                                <h3 class="widget-title">태그</h3>
+                                <div class="tags-cloud">
+                                    <s_random_tags>
+                                        <a href="[##_tag_link_##]" class="tag [##_tag_class_##]">[##_tag_name_##]</a>
+                                    </s_random_tags>
+                                </div>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!-- 방문자 통계 -->
+                            <div class="widget stats-widget">
+                                <h3 class="widget-title">방문자</h3>
+                                <div class="stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">전체</span>
+                                        <span class="stat-value">[##_count_total_##]</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">오늘</span>
+                                        <span class="stat-value">[##_count_today_##]</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">어제</span>
+                                        <span class="stat-value">[##_count_yesterday_##]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </s_sidebar_element>
+                    </s_sidebar>
+
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 [##_title_##]. All rights reserved.</p>
+                <p>Powered by <a href="https://www.tistory.com" target="_blank">Tistory</a></p>
+            </div>
+        </div>
+    </footer>
+
+</s_t3>
+
+<script>
+    // 반응형 네비게이션
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.createElement('button');
+        navToggle.className = 'nav-toggle';
+        navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+
+        const nav = document.querySelector('.nav');
+        const navList = document.querySelector('.nav-list');
+
+        if (nav && navList) {
+            nav.insertBefore(navToggle, navList);
+
+            navToggle.addEventListener('click', function() {
+                navList.classList.toggle('active');
+            });
+        }
+
+        // 스크롤 헤더
+        const header = document.querySelector('.header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // 이미지 레이지 로딩
+        const images = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+
+        // 부드러운 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
